@@ -85,4 +85,15 @@ class Admin extends CI_Controller
         $this->load->view('admin/bahan-ajar', $data);
         $this->load->view('templates/footer');
     }
+
+    public function hapus($id)
+    {
+        $data = $this->db->get_where('data_bahan_ajar', ['id' => $id])->row_array();
+        $file = $data['file'];
+        $this->db->where('id', $id);
+        $this->db->delete('data_bahan_ajar');
+        unlink(FCPATH . 'assets/bahanajar/' . $file);
+        $this->session->set_flashdata('message', '<strong> dihapus! </strong>');
+        redirect('admin');
+    }
 }

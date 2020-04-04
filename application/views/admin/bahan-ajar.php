@@ -3,7 +3,7 @@
 
     <div class="row">
         <div class="col-lg-6">
-            <?= $this->session->flashdata('message'); ?>
+            <div class="flash-data" data-flashdata="<?= $this->session->flashdata('message'); ?>"></div>
         </div>
     </div>
 
@@ -42,6 +42,7 @@
                             <th style="width: 10%">Semester</th>
                             <th style="width: 10%">Tahun</th>
                             <th style="width: 10%">Bahan Ajar</th>
+                            <th style="width: 10%">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -55,6 +56,9 @@
                                 <td><?= $b['tahun']; ?></td>
                                 <td align="center">
                                     <a href="<?= base_url('assets/bahanajar/') . $b['file']; ?>" id="<?= 'id' ?>" target="_blank" class="btn btn-success btn-sm tombol"><i class="fas fa-eye"></i> Lihat</a>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url('admin/hapus/'); ?><?= $b['id']; ?>" class="btn btn-danger hapus"><i class="far fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                             <?php $i++; ?>

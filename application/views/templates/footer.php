@@ -55,6 +55,10 @@
       <!-- Page level custom scripts -->
       <script src="<?= base_url('assets/') ?>js/demo/datatables-demo.js"></script>
 
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+      <script src="<?= base_url('assets/js/script.js'); ?>"></script>
+
 
       <script>
           //   jquery untuk manipulasi input gambar
