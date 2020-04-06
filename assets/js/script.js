@@ -1,7 +1,12 @@
 const flashData = $(".flash-data").data("flashdata");
+const flashData1 = $(".flash-data1").data("flashdata");
 
 if (flashData) {
 	Swal.fire("Sukses", "Data Berhasil " + flashData, "success");
+}
+
+if (flashData1) {
+	Swal.fire("Sukses", "Akun " + flashData, "success");
 }
 
 $(".hapus").on("click", function (e) {
